@@ -9,28 +9,28 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CreateRepositoryCommand extends Command
+class CreateServiceCommand extends Command
 {
-    protected static $defaultName = 'make:repository';
+    protected static $defaultName = "make:service";
 
     protected function configure()
     {
         $this
-            ->setName('make:repository') // Atur nama command di sini
-            ->setDescription("Create a new repository class")
-            ->addArgument('name', InputArgument::REQUIRED, 'The name of the repository')
-            ->addOption('model', 'm', InputOption::VALUE_OPTIONAL, 'The name of the model');
+            ->setName('make:service') // Atur nama command di sini
+            ->setDescription("Create a new service class")
+            ->addArgument("name", InputArgument::REQUIRED, "The name of the service")
+            ->addOption("repository", "r", InputOption::VALUE_OPTIONAL, "The name of repository");
     }
 
     // command execute
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $name = $input->getArgument('name');
-        $model = $input->getOption('model') ?? str_replace('Repository', '', $name);
+        $name = $input->getArgument("name");
+        $repository = $input->getOption("repository") ?? str_replace("Service", "", $name) . 'Repository';
         $path = getcwd();
 
         $generator = new Generator();
-        $generator->generateRepository($name, $model, $path);
+        $generator->generateService($name, $repository, $path);
         return Command::SUCCESS;
     }
 }

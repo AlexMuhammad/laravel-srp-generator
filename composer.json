@@ -9,11 +9,12 @@
     }
   ],
   "require": {
-    "php": "^8.0"
+    "php": "^8.0",
+    "symfony/console": "^7.2"
   },
   "autoload": {
     "psr-4": {
-      "YourVendor\\ServiceRepoGenerator\\": "src/"
+      "AlexMuhammad\\SrpGenerator\\": "src/"
     }
   },
   "autoload-dev": {
