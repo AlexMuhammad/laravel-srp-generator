@@ -1,0 +1,26 @@
+{
+  "name": "alexmuhammad/laravel-srp-generator",
+  "description": "A PHP native package to generate Service and Repository classes.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AlexMuhammad",
+      "email": "saputraalex872@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "YourVendor\\ServiceRepoGenerator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "YourVendor\\ServiceRepoGenerator\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
